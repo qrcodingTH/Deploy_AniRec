@@ -1,5 +1,5 @@
-Pillow==8.4.0  # Update to a more recent version
-requests==2.26.0  # Update to a more recent version
-streamlit==1.5.0  # Update to a more recent version
-torch==1.10.0  # Downgrade to a version compatible with torchvision 0.15.1
-torchvision==0.15.1  # Keep torchvision version unchanged
+Pillow==8.4.0
+requests==2.26.0
+streamlit==1.5.0
+torch==1.10.0  # Choose a compatible version from the list provided by PyPI
+torchvision==0.15.1
