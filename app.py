@@ -9,23 +9,13 @@ import torchvision.models as models
 import requests
 
 
-import pickle
+model_path = 'best_model Resnext101.pth'
 
-model_path = './best_model Resnext101.pth'
-
-# Check if the file exists and is accessible
-if not os.path.exists(model_path):
-    print(f"Error: The file {model_path} does not exist.")
+# Check if the file exists and its size is greater than zero
+if os.path.exists(model_path) and os.path.getsize(model_path) > 0:
+    print(f"The file {model_path} has been downloaded and saved successfully.")
 else:
-    try:
-        state_dict = torch.load(model_path, map_location=torch.device('cpu'))
-        print("Model loaded successfully.")
-    except pickle.UnpicklingError as e:
-        print("UnpicklingError: The model file might be corrupted or incompatible.")
-        print(f"Error details: {e}")
-    except Exception as e:
-        print("An error occurred while loading the model.")
-        print(f"Error details: {e}")
+    print(f"Error: The file {model_path} does not exist or is empty.")
 
 
 
