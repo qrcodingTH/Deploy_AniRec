@@ -1,5 +1,5 @@
-Pillow==8.4.0
-requests==2.26.0
+Pillow==10.3.0
+requests==2.32.3
 streamlit==1.5.0
-torch==1.9.0  # Choose a compatible version from the available options
-torchvision==0.10.0  # This version is compatible with torch 1.9.0
+torch==2.3.1
+torchvision==0.18.1
