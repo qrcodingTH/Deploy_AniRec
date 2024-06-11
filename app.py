@@ -7,6 +7,16 @@ import json
 import os
 import torchvision.models as models
 import requests
+import torch
+
+try:
+    state_dict = torch.load('./best_model Resnext101.pth', map_location=torch.device('cpu'))
+except pickle.UnpicklingError as e:
+    print("UnpicklingError: The model file might be corrupted or incompatible.")
+    print(f"Error details: {e}")
+except Exception as e:
+    print("An error occurred while loading the model.")
+    print(f"Error details: {e}")
 
 # Define the label map
 label_map = {
