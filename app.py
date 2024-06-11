@@ -7,7 +7,8 @@ import json
 import os
 import torchvision.models as models
 import requests
-import torch
+
+import pickle  # Import the pickle module
 
 try:
     state_dict = torch.load('./best_model Resnext101.pth', map_location=torch.device('cpu'))
@@ -17,6 +18,7 @@ except pickle.UnpicklingError as e:
 except Exception as e:
     print("An error occurred while loading the model.")
     print(f"Error details: {e}")
+
 
 # Define the label map
 label_map = {
