@@ -122,7 +122,7 @@ with open(label_map_path, 'w') as f:
 class MyResNeXt101(nn.Module):
     def __init__(self, num_classes=100):
         super(MyResNeXt101, self).__init__()
-        self.network = models.resnext101_32x8d(weights='ResNeXt101_32X8D_Weights.IMAGENET1K_V1')
+        self.network = models.resnext101_32x8d(pretrained=True)
 
         in_features = self.network.fc.in_features
         self.network.fc = nn.Linear(in_features, num_classes)
