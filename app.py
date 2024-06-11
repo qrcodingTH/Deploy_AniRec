@@ -122,7 +122,7 @@ with open(label_map_path, 'w') as f:
 class MyResNeXt101(nn.Module):
     def __init__(self, num_classes=100):
         super(MyResNeXt101, self).__init__()
-        self.network = models.resnext101_32x8d(weights="imagenet")
+        self.network = models.resnext101_32x8d(pretrained=True)
 
         in_features = self.network.fc.in_features
         self.network.fc = nn.Linear(in_features, num_classes)
@@ -132,7 +132,7 @@ class MyResNeXt101(nn.Module):
 
 # Load the model
 model = MyResNeXt101(num_classes=100)
-state_dict = torch.load('best_model_Resnext101.pth', map_location=torch.device('cpu'))
+state_dict = torch.load('.//best_model Resnext101.pth', map_location=torch.device('cpu'))
 model.load_state_dict(state_dict)
 model.eval()
 
