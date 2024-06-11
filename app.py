@@ -8,17 +8,6 @@ import os
 import torchvision.models as models
 import requests
 
-
-model_path = 'best_model Resnext101.pth'
-
-# Check if the file exists and its size is greater than zero
-if os.path.exists(model_path) and os.path.getsize(model_path) > 0:
-    print(f"The file {model_path} has been downloaded and saved successfully.")
-else:
-    print(f"Error: The file {model_path} does not exist or is empty.")
-
-
-
 # Define the label map
 label_map = {
     "0": "Akame ga Kill!",
@@ -143,7 +132,7 @@ class MyResNeXt101(nn.Module):
 
 # Load the model
 model = MyResNeXt101(num_classes=100)
-state_dict = torch.load('./best_model Resnext101.pth', map_location=torch.device('cpu'))
+state_dict = torch.load('best_model Resnext101.pth', map_location=torch.device('cpu'))
 model.load_state_dict(state_dict)
 model.eval()
 
