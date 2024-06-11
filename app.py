@@ -8,6 +8,7 @@ import os
 import torchvision.models as models
 import requests
 
+print(torch.__version__)
 # Define the label map
 label_map = {
     "0": "Akame ga Kill!",
