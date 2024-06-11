@@ -132,7 +132,8 @@ class MyResNeXt101(nn.Module):
 
 # Load the model
 model = MyResNeXt101(num_classes=100)
-state_dict = torch.load('best_model_Resnext101.pth')
+import pickle
+state_dict = torch.load('best_model_Resnext101.pth', pickle_module=pickle)
 model.load_state_dict(state_dict)
 model.eval()
 
